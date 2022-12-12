@@ -26,4 +26,12 @@ public class InputView {
             throw new IllegalArgumentException(ErrorMessage.ZERO_MUST_NOT_EXIST);
         }
     }
+
+    public static boolean requestRestartGame() {
+        System.out.println(Message.GAME_OVER);
+        System.out.println(Message.REQUEST_RESTART_GAME);
+        String input = Console.readLine();
+        RestartSelection.validate(input);
+        return input.equals(RestartSelection.RESTART.getSelection());
+    }
 }

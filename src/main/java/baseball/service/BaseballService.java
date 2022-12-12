@@ -12,7 +12,6 @@ public class BaseballService {
 
     public void createBaseballAnswerNumber() {
         List<Integer> baseballAnswerNumber = BaseballNumberAnswerGenerator.createBaseballAnswerNumber();
-        System.out.println(baseballAnswerNumber);
         this.baseballAnswerNumber = new BaseballAnswerNumber(baseballAnswerNumber);
     }
 

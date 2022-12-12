@@ -23,14 +23,14 @@
 
 ## 프로그래밍 요구 사항
 
-- [ ] 요구 사항에 명시된 출력값 형식 지키기
-- [ ] 자바 11버전
-- [ ] 자바 컨벤션 준수
-- [ ] 프로그램 종료시 System.exit() 호출 x
-- [ ] 모든 테스트 통과
-- [ ] 들여쓰기 최대 깊이 2
-- [ ] 3항 연산자 사용 x
-- [ ] 함수가 한가지 일만 하도록 만들기
-- [ ] `camp.nextstep.edu.missionutils`에서 제공하는 `Randoms` 및 `Console` API 사용
-    - [ ] Random 값 추출은 `camp.nextstep.edu.missionutils.Randoms`의 `pickNumberInRange()`를 활용
-    - [ ] 사용자가 입력하는 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용
+- [x] 요구 사항에 명시된 출력값 형식 지키기
+- [x] 자바 11버전
+- [x] 자바 컨벤션 준수
+- [x] 프로그램 종료시 System.exit() 호출 x
+- [x] 모든 테스트 통과
+- [x] 들여쓰기 최대 깊이 2
+- [x] 3항 연산자 사용 x
+- [x] 함수가 한가지 일만 하도록 만들기
+- [x] `camp.nextstep.edu.missionutils`에서 제공하는 `Randoms` 및 `Console` API 사용
+    - [x] Random 값 추출은 `camp.nextstep.edu.missionutils.Randoms`의 `pickNumberInRange()`를 활용
+    - [x] 사용자가 입력하는 값은 `camp.nextstep.edu.missionutils.Console`의 `readLine()`을 활용

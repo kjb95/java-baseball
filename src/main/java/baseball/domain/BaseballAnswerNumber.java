@@ -2,9 +2,7 @@ package baseball.domain;
 
 import java.util.List;
 
-public class BaseballAnswerNumber {
-
-    private final List<Integer> numbers;
+public class BaseballAnswerNumber extends BaseballNumber {
 
     public BaseballAnswerNumber(List<Integer> numbers) {
         this.numbers = numbers;

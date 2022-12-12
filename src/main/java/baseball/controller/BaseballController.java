@@ -3,6 +3,7 @@ package baseball.controller;
 import baseball.constant.Constant;
 import baseball.dto.GameResultDto;
 import baseball.service.BaseballService;
+import baseball.utils.Utils;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 
@@ -18,15 +19,20 @@ public class BaseballController {
         }
     }
 
-    public boolean playGame() {
+    private boolean playGame() {
         boolean isGameOver = false;
         baseballService.createBaseballAnswerNumber();
         while (!isGameOver) {
-            String number = InputView.requestNumberBaseball();
-            GameResultDto gameResultDto = baseballService.computeGameResult(number);
-            OutputView.printGameResult(gameResultDto.getBallCount(), gameResultDto.getStrikeCount());
-            isGameOver = gameResultDto.getStrikeCount() == Constant.BASEBALL_NUMBER_SIZE;
+            Utils.exceptionHandlingRepeatSelf(this::requestBaseballNumber, OutputView::printErrorMessage);
+            isGameOver = requestBaseballNumber();
         }
         return InputView.requestRestartGame();
+    }
+
+    private boolean requestBaseballNumber() {
+        String number = Utils.requestInput(InputView::requestNumberBaseball, OutputView::printErrorMessage);
+        GameResultDto gameResultDto = baseballService.computeGameResult(number);
+        OutputView.printGameResult(gameResultDto.getBallCount(), gameResultDto.getStrikeCount());
+        return gameResultDto.getStrikeCount() == Constant.BASEBALL_NUMBER_SIZE;
     }
 }

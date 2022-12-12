@@ -22,15 +22,14 @@ public class BaseballController {
         boolean isGameOver = false;
         baseballService.createBaseballAnswerNumber();
         while (!isGameOver) {
-            requestBaseballNumber();
-            //            isGameOver = Utils.exceptionHandlingRepeatSelf(this::requestBaseballNumber, OutputView::printErrorMessage);
+            //            isGameOver = Utils.exceptionHandlingRepeat(this::requestBaseballNumber, OutputView::printErrorMessage);
             isGameOver = requestBaseballNumber();
         }
         return InputView.requestRestartGame();
     }
 
     private boolean requestBaseballNumber() {
-        //        String number = Utils.requestInput(InputView::requestNumberBaseball, OutputView::printErrorMessage);
+        //        String number = Utils.exceptionHandlingRepeat(InputView::requestNumberBaseball, OutputView::printErrorMessage);
         String number = InputView.requestNumberBaseball();
         GameResultDto gameResultDto = baseballService.computeGameResult(number);
         OutputView.printGameResult(gameResultDto.getBallCount(), gameResultDto.getStrikeCount());

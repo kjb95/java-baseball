@@ -14,5 +14,6 @@ public class BaseballController {
         baseballService.createBaseballAnswerNumber();
         String number = InputView.requestNumberBaseball();
         GameResultDto gameResultDto = baseballService.computeGameResult(number);
+        OutputView.printGameResult(gameResultDto.getBallCount(), gameResultDto.getStrikeCount());
     }
 }

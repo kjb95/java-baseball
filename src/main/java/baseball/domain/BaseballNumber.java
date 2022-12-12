@@ -33,12 +33,4 @@ public class BaseballNumber {
     private boolean isStrike(List<Integer> targetNumbers, int numberIndex) {
         return numbers.get(numberIndex) == targetNumbers.get(numberIndex);
     }
-
-    public boolean isGameOver(BaseballNumber baseballNumber) {
-        return countStrike(baseballNumber) == Constant.BASEBALL_NUMBER_SIZE;
-    }
-
-    public boolean isNothing(BaseballNumber baseballNumber) {
-        return countBall(baseballNumber) == 0 && countStrike(baseballNumber) == 0;
-    }
 }

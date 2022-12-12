@@ -12,6 +12,7 @@ public class BaseballService {
 
     public void createBaseballAnswerNumber() {
         List<Integer> baseballAnswerNumber = BaseballNumberAnswerGenerator.createBaseballAnswerNumber();
+        System.out.println(baseballAnswerNumber);
         this.baseballAnswerNumber = new BaseballAnswerNumber(baseballAnswerNumber);
     }
 
@@ -19,9 +20,7 @@ public class BaseballService {
         BaseballUserNumber baseballUserNumber = new BaseballUserNumber(number);
         int ballCount = baseballAnswerNumber.countBall(baseballUserNumber);
         int strikeCount = baseballAnswerNumber.countStrike(baseballUserNumber);
-        boolean isNothing = baseballAnswerNumber.isNothing(baseballUserNumber);
-        boolean isGameOver = baseballAnswerNumber.isGameOver(baseballUserNumber);
-        return new GameResultDto(ballCount, strikeCount, isNothing, isGameOver);
+        return new GameResultDto(ballCount, strikeCount);
     }
 
 
